@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1402588765 source:/home/jack/Development/Applications/Projects/HTML Code Formatter/main.cpp
+	<iostream>
+	<fstream>
+	<iterator>
+	<vector>
+
