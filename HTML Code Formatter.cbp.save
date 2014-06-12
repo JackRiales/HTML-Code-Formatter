@@ -13,25 +13,51 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add option="-DDEBUG" />
 				</Compiler>
 			</Target>
-			<Target title="Release">
-				<Option output="bin/Release/HTML Code Formatter" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj/Release/" />
+			<Target title="LINUX">
+				<Option output="bin/LINUX/HTML Code Formatter" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin/LINUX" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
-					<Add option="-O2" />
+					<Add option="-DLINUX" />
 				</Compiler>
-				<Linker>
-					<Add option="-s" />
-				</Linker>
+			</Target>
+			<Target title="WINDOWS_x86">
+				<Option output="bin/WINDOWS_x86/HTML Code Formatter" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin/WINDOWS" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-DWINDOWS" />
+				</Compiler>
+			</Target>
+			<Target title="WINDOWS_64">
+				<Option output="bin/WINDOWS_64/HTML Code Formatter" prefix_auto="1" extension_auto="1" />
+				<Option type="0" />
+				<Option compiler="gcc" />
 			</Target>
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="main.cpp" />
+		<Unit filename="lin.hpp">
+			<Option target="Debug" />
+			<Option target="LINUX" />
+			<Option target="WINDOWS_x86" />
+		</Unit>
+		<Unit filename="main.cpp">
+			<Option target="Debug" />
+			<Option target="LINUX" />
+			<Option target="WINDOWS_x86" />
+		</Unit>
+		<Unit filename="win.hpp">
+			<Option target="Debug" />
+			<Option target="LINUX" />
+			<Option target="WINDOWS_x86" />
+		</Unit>
 		<Extensions>
 			<code_completion />
 			<debugger />
